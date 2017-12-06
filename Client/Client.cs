@@ -46,7 +46,10 @@ namespace IntelligentVacuum.Client
                     // could maybe replace with a reference check...
                     if (room.XAxis == map.AgentRoom.XAxis && room.YAxis == map.AgentRoom.YAxis)
                     {
+                        ConsoleColor prevColor = Console.ForegroundColor;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write('V');
+                        Console.ForegroundColor = prevColor;
                     }
                     else if (room.IsDirty)
                     {
@@ -54,7 +57,10 @@ namespace IntelligentVacuum.Client
                     }
                     else if (room.IsLocked)
                     {
+                        ConsoleColor prevColor = Console.ForegroundColor;
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write('L');
+                        Console.ForegroundColor = prevColor;
                     }
                     else
                     {
